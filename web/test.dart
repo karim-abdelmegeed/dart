@@ -5,7 +5,7 @@ const weather="the wether is 35";
 const seconds= Duration(seconds:5);
 
 Future<void> printDailyNews()async{
-  var weather_news=await printWeather();
+  var weather_news= printWeather();
   print(weather_news);
 }
 void main(){
