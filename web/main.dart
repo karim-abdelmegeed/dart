@@ -1,9 +1,13 @@
 import 'dart:io';
 import 'dart:async';
+/* List<int> a=[1,2,3]; //Generic data type
+  List b=['b','a'];*/
 main(){
-  List<int> a=[1,2,3]; //Generic data type
-  List b=['b','a'];
- var squareobject = new Square("square",5);
+ print("Enter the name of shape");
+ String nameShape=stdin.readLineSync();
+  print("Enter the height of shape");
+ int height = stdin.readByteSync() ;
+ var squareobject = new Square(nameShape,height);
  var area= squareobject.areaSquare();
   print(area);
  var tringleobject  = new Triangle("tringle",5,5);

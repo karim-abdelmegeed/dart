@@ -11,4 +11,8 @@ Future main() async{
   // Put each line of the file into its own string.
   contents= await config.readAsLines();
   print('the file is ${contents.length} lines long');
+  // Reading a file as binary
+  contents= await config.readAsBytes();
+  print('the file is ${contents.length}bytes long');
+   print('the file is ${contents}bytes long');
 }
