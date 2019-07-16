@@ -13,7 +13,7 @@ main(){
 void misbehave() {
   try {
     dynamic foo = true;
-    print(foo++); 
+    print(foo++) ;
   } catch (e) {
     print('misbehave() partially handled ${e.runtimeType}.');
     rethrow;

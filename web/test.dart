@@ -5,11 +5,7 @@ const weather="the wether is 35";
 const seconds= Duration(seconds:5);
 
 Future<void> printDailyNews()async{
-<<<<<<< HEAD
-  var weather_news= printWeather();
-=======
-  var weather_news= await printWeather();
->>>>>>> 66d03dd6e1d4205160f682f8b6696329b304c40d
+  var weather_news=await printWeather();
   print(weather_news);
 }
 void main(){
@@ -18,6 +14,7 @@ void main(){
   news1();
   news2();
   news3();
+
 }
 void news(){
     print('its daily news');
@@ -33,5 +30,7 @@ void news3(){
 }
 
 Future<String> printWeather()=> Future.delayed(seconds,() => weather);
-
-
+//delayed function takes 2 parameters the first is seconde , the second is function without name
+// that return the wither 
+// Future<String> is a genaric data type 
+// I use future data type when I don't know what the data type will return
