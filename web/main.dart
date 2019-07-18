@@ -37,14 +37,14 @@ main(){
          print("you are don't enter the require,plase enter the required data ");
          }
          //----------------------------------
-  }else if(nameShape=="tringle"){
+  }else if(nameShape=="Triangle"){
     print('do you want to calculate the area or circumference of the tringle ?');
     String request = stdin.readLineSync();
 
     if(request=="area"){
-      print("enter the height of tringle");
+      print("enter the height of Triangle");
       int height= int.parse(stdin.readLineSync());
-      print("enter the base of tringle");
+      print("enter the base of Triangle");
       int base= int.parse(stdin.readLineSync());
         if(height > 0 && base > 0){
           int height2;
@@ -57,11 +57,11 @@ main(){
           print ("you are entered an invalid value");
         }
     }else if(request=="circumference"){
-        print("enter the first height of of tringle");
+        print("enter the first height of of Triangle");
       int height= int.parse(stdin.readLineSync());
-      print("enter the second height of tringle");
+      print("enter the second height of Triangle");
       int height2= int.parse(stdin.readLineSync());
-      print("enter the base of tringle");
+      print("enter the base of Triangle");
       int base= int.parse(stdin.readLineSync());
       if(height > 0 && base > 0 && height2 > 0 ){
        var tringleobject  = new Triangle(nameShape,height,base,height2);
@@ -73,6 +73,46 @@ main(){
           print ("you are entered an invalid value");
         }
     }
+
+  }else if (nameShape=="circle"){
+   print('do you want to calculate the area or circumference of the circle ?'); 
+   String request = stdin.readLineSync();
+   if(request=="area"){
+     print("enter the radius of circle");
+     int radius=int.parse(stdin.readLineSync()) ;
+     var circle = new Circle(nameShape,radius);
+     print(circle.areaCircle);
+   } else if (request=="circumference"){
+     print("enter the radius of circle");
+     int radius=int.parse(stdin.readLineSync());
+     var circle=new Circle(nameShape,radius);
+     print (circle.circumCircle());
+   }else{
+      print ("you are entered an invalid value");
+   }
+
+  }else if(nameShape=="restangle"){
+   print('do you want to calculate the area or circumference of the restangle ?'); 
+   String request=stdin.readLineSync();
+   if(request=="area"){
+     print("enter the height of restangle");
+     int height=int.parse(stdin.readLineSync());
+     print('enter the width of restangle ');
+     int width=int.parse(stdin.readLineSync());
+     var restangle = new Restangle(nameShape,height,width);
+     print(restangle.areaRestangle());
+   }else if(request=="circumference"){
+     print('enter the height of restangle ');
+     int height = int.parse(stdin.readLineSync());
+     print('enter the width of the restangle ');
+     int width = int.parse(stdin.readLineSync());
+     var restangle = new Restangle(nameShape,height,width);
+     print(restangle.circumRestangle());
+   }else{
+      print ("you are entered an invalid value");
+   }
+
+
   }else {
     print('the shape name is not available');
   }
@@ -83,13 +123,11 @@ class Superclass{
  String nameShape="";
  int height;
  int width;
-
- 
- //constractor to pass data to object of class
+  //constractor to pass data to object of class
   Superclass(nameShape,height,width){
   this.nameShape=nameShape;
   this.height=height;
-
+  this.width=width;
 
 
   }
@@ -125,3 +163,36 @@ class Triangle extends Superclass{
   }
   
 }
+
+//////////////////// restangle supclass3/////////////////
+ 
+class Restangle extends Superclass{
+
+  Restangle(nameShape,height,width):super(nameShape,height,width);
+
+  areaRestangle(){
+    return super.height * super.width;
+  }
+  
+  circumRestangle(){
+    return (super.height + super.width) * 2 ;
+  }
+}
+
+//////////////////// Circle supclass4/////////////////
+class Circle extends Superclass {
+  int radius ;
+  final pi=3.14;
+  Circle(nameShape,radius):super(nameShape,null,null){
+    this.radius=radius;
+  }
+
+  circumCircle(){
+  return 2 * this.pi * this.radius;
+  }
+
+  
+}
+
+
+ 

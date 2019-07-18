@@ -2,8 +2,9 @@ main(){
       var object = new Superclass("hala",21);
     print(object.name);
     print(object.age);
-   var object2 = new SupClass("mohammed");
-   print(object2.name);
+    var object2= new SupClass("mohamed","devoleper");
+    print(object2.name + " : "  object2.job);
+
 }
 class Superclass{
   String name ;
@@ -17,8 +18,10 @@ class Superclass{
 
 class SupClass extends Superclass {
 String job;
-SupClass(name):super(name,null){
+SupClass(name,job):super(name,null){
+this.job=job;
 
 }
+
 
 }
